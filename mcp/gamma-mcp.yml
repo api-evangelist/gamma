@@ -1,0 +1,53 @@
+generated: '2026-07-19'
+method: searched
+status: published
+source: https://developers.gamma.app/mcp/gamma-mcp-server
+server:
+  name: gamma
+  transport: http
+  url: https://mcp.gamma.app/mcp
+authentication:
+  type: oauth2
+  description: >-
+    OAuth 2.0 Bearer token with Dynamic Client Registration (RFC 7591). Clients
+    discover the authorization server via RFC 9728 OAuth Protected Resource
+    Metadata at https://mcp.gamma.app/.well-known/oauth-protected-resource. PKCE
+    (S256) is required.
+  authorization_server: https://auth.gamma.app
+  scopes_supported:
+  - generate
+  - gamma:read
+tools:
+- name: generate
+  description: Create presentations, documents, webpages, or social posts from scratch.
+  parameters: [inputText, format, numCards, themeId, folderIds]
+- name: generate_from_template
+  description: Create a new gamma by adapting an existing template.
+  parameters: [gammaId, prompt, themeId]
+- name: get_generation_status
+  description: Check generation job progress.
+  parameters: [generationId]
+- name: export_gamma
+  description: Export an existing gamma to PDF, PPTX, or PNG.
+  parameters: [gammaIdOrUrl, exportAs]
+- name: get_export_status
+  description: Retrieve export download link.
+  parameters: [exportId]
+- name: get_gammas
+  description: Browse or search existing gammas and templates.
+  parameters: [query, type, limit]
+- name: read_gamma
+  description: Read the full content of an existing gamma (read-only).
+  parameters: [gammaIdOrUrl]
+- name: get_themes
+  description: Browse the theme library.
+  parameters: [name]
+- name: get_folders
+  description: Browse Gamma folders.
+  parameters: [name]
+integrations:
+- ChatGPT App
+- Claude connector
+- Zapier
+- Make
+- n8n

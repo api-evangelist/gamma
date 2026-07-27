@@ -1,8 +1,29 @@
 aid: gamma
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/gamma.png
 name: Gamma
-description: 'Gamma is a company surfaced as a portfolio company of accel, ivp, sapphire-ventures, uncork-capital
-  and added to the API Evangelist network as a stub for enrichment. Sector: productivity. This profile
-  is a lead awaiting the enrichment pipeline.'
+description: >-
+  Gamma (Gamma Tech, Inc.) is an AI-native productivity platform for creating
+  presentations, documents, websites, and social posts from a prompt or from
+  existing content. Its public Generate API lets developers programmatically
+  produce and manage gammas: generate from scratch or from a template, poll the
+  asynchronous generation job, list workspace themes and folders, export to PDF,
+  PPTX, or PNG, read and manage gammas, and pull document- and card-level
+  engagement analytics. Authentication is via an X-API-KEY header (keys begin
+  sk-gamma-) on Pro, Ultra, Teams, and Business plans, with credit-based billing.
+  Gamma also ships an official remote MCP server (OAuth 2.0 with Dynamic Client
+  Registration) and native integrations for Zapier, Make, n8n, Claude, and ChatGPT.
 url: https://raw.githubusercontent.com/api-evangelist/gamma/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,20 +32,101 @@ x-backed-by:
 - ivp
 - sapphire-ventures
 - uncork-capital
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: enriched
+x-tier-reason: public-api
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
 - Productivity
-apis: []
+- Presentations
+- Documents
+- Websites
+- Artificial Intelligence
+- Generative AI
+- Content Generation
+- Design
+apis:
+- name: Gamma Generate API
+  description: >-
+    Programmatic creation and management of gammas (presentations, documents,
+    websites, and social posts). Asynchronous generate-and-poll workflow plus
+    template, export, management, and analytics endpoints. Auth via X-API-KEY.
+  humanURL: https://developers.gamma.app/
+  baseURL: https://public-api.gamma.app/v1.0
+  tags:
+  - Presentations
+  - Documents
+  - Generative AI
+  - Content Generation
+  properties:
+  - type: Authentication
+    url: authentication/gamma-authentication.yml
+  - type: OAuthScopes
+    url: scopes/gamma-scopes.yml
+  - type: Conventions
+    url: conventions/gamma-conventions.yml
+  - type: ErrorCatalog
+    url: errors/gamma-error-codes.yml
+  - type: Conformance
+    url: conformance/gamma-conformance.yml
+  - type: RateLimits
+    url: rate-limits/gamma-rate-limits.yml
+  - type: Lifecycle
+    url: lifecycle/gamma-lifecycle.yml
+  - type: ChangeLog
+    url: changelog/gamma-changelog.yml
+  - type: MCPServer
+    url: mcp/gamma-mcp.yml
+  - type: WellKnown
+    url: well-known/gamma-well-known.yml
+  - type: LLMsTxt
+    url: llms/gamma-llms.txt
+  - type: Packages
+    url: packages/gamma-packages.yml
+  - type: SDKs
+    url: packages/gamma-packages.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/gamma-domain-security.yml
 - type: Website
   url: https://gamma.app/
+- type: DeveloperPortal
+  url: https://developers.gamma.app/
+- type: Documentation
+  url: https://developers.gamma.app/docs/getting-started
+- type: APIReference
+  url: https://developers.gamma.app/get-started/understanding-the-api-options
+- type: GettingStarted
+  url: https://developers.gamma.app/docs/getting-started
+- type: Support
+  url: https://help.gamma.app/
+- type: HelpCenter
+  url: https://help.gamma.app/
+- type: GitHubOrganization
+  url: https://github.com/gamma-app
+- type: StatusPage
+  url: https://status.gamma.app/
+- type: ChangeLog
+  url: https://developers.gamma.app/reference/changelog
+- type: Pricing
+  url: https://gamma.app/pricing
+- type: SignUp
+  url: https://gamma.app/signup
+- type: TermsOfService
+  url: https://gamma.app/terms
+- type: PrivacyPolicy
+  url: https://gamma.app/privacy
+- type: MCPServer
+  url: https://mcp.gamma.app/mcp
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

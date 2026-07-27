@@ -1,0 +1,30 @@
+generated: '2026-07-19'
+method: searched
+source: >-
+  https://mcp.gamma.app/.well-known/oauth-protected-resource;
+  https://auth.gamma.app/.well-known/oauth-authorization-server
+standards:
+- id: oauth2
+  conforms: true
+  evidence: MCP surface uses OAuth 2.0 authorization-code flow (auth.gamma.app authorization server).
+- id: oauth2-pkce
+  conforms: true
+  evidence: code_challenge_methods_supported includes S256.
+- id: rfc7591-dynamic-client-registration
+  conforms: true
+  evidence: registration_endpoint published at https://auth.gamma.app/oauth/register.
+- id: rfc8414-authorization-server-metadata
+  conforms: true
+  evidence: /.well-known/oauth-authorization-server returns 200 at auth.gamma.app.
+- id: rfc9728-oauth-protected-resource-metadata
+  conforms: true
+  evidence: /.well-known/oauth-protected-resource returns 200 at mcp.gamma.app.
+- id: api-key-auth
+  conforms: true
+  evidence: REST API authenticates with X-API-KEY header (keys prefixed sk-gamma-).
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Error envelope is a custom { message, statusCode } shape, not application/problem+json.
+- id: openid-connect
+  conforms: false
+  evidence: /.well-known/openid-configuration returns 404; OAuth server publishes no OIDC discovery.

@@ -1,0 +1,21 @@
+generated: '2026-07-19'
+method: searched
+source: https://developers.gamma.app/reference/changelog
+versioning:
+  scheme: uri-path
+  current: v1.0
+  base_url: https://public-api.gamma.app/v1.0
+  docs: https://developers.gamma.app/get-started/understanding-the-api-options
+deprecation:
+  policy_url: https://developers.gamma.app/reference/changelog
+  notes: >-
+    The prior v0.2 endpoints were disabled on 2026-01-16; all integrations must
+    use v1.0. Gamma announces breaking changes and removals through the developer
+    changelog. No formal RFC 8594 Sunset/Deprecation header policy is documented.
+  history:
+  - version: v0.2
+    status: removed
+    date: '2026-01-16'
+status_page: https://status.gamma.app/
+changelog: https://developers.gamma.app/reference/changelog
+support: https://help.gamma.app/

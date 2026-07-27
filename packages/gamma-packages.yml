@@ -1,0 +1,19 @@
+generated: '2026-07-19'
+method: searched
+source: https://developers.gamma.app/connectors/connectors-and-integrations
+notes: >-
+  Gamma ships no general-purpose server SDK. Its only official published client
+  package is the n8n community node (@gammatech/n8n-nodes-gamma), maintained in
+  the gamma-app GitHub org. Native integrations for Zapier, Make, Claude, and
+  ChatGPT are hosted connectors, not installable packages, so they are not listed
+  here.
+packages:
+- language: typescript
+  registry: npm
+  name: "@gammatech/n8n-nodes-gamma"
+  url: https://www.npmjs.com/package/@gammatech/n8n-nodes-gamma
+  install: npm install @gammatech/n8n-nodes-gamma
+  repository: https://github.com/gamma-app/n8n-nodes-gamma
+  version: 0.1.2
+  description: Official Gamma community node for n8n — create AI-powered presentations and documents.
+  official: true

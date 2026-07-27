@@ -1,0 +1,51 @@
+generated: '2026-07-19'
+method: searched
+source: https://developers.gamma.app/guides/async-patterns-and-polling
+authentication:
+  style: api-key-header
+  header: X-API-KEY
+  key_prefix: sk-gamma-
+  oauth: MCP surface uses OAuth 2.0 (see authentication/gamma-authentication.yml)
+async:
+  pattern: create-then-poll
+  description: >-
+    Write operations (POST /generations, POST /generations/from-template,
+    POST /gammas/{gammaId}/export) return a job id; poll the matching GET
+    endpoint until status is completed or failed.
+  poll_interval_seconds: 5
+  statuses: [pending, completed, failed]
+idempotency:
+  key_header: false
+  notes: >-
+    Gamma does not document an Idempotency-Key header. POST /gammas/{gammaId}/archive
+    is documented as naturally idempotent (archiving an already-archived gamma
+    succeeds), but there is no client-supplied idempotency-key contract.
+pagination:
+  style: cursor
+  notes: >-
+    List/analytics endpoints (e.g. GET /gammas/{gammaId}/comments,
+    GET /gammas/{gammaId}/analytics/viewers) are cursor-paginated; comments
+    support an updatedSince filter for delta polling.
+rate_limiting:
+  signaled_via_headers: true
+  headers:
+  - x-ratelimit-limit-burst
+  - x-ratelimit-remaining-burst
+  - x-ratelimit-limit
+  - x-ratelimit-remaining
+  - x-ratelimit-limit-daily
+  - x-ratelimit-remaining-daily
+  retry_after: true
+  guidance: On 429, pause ~30s then retry with exponential backoff; use adaptive polling as capacity drops.
+  cross_link: rate-limits/gamma-rate-limits.yml
+error_envelope:
+  shape: '{ "message": string, "statusCode": number }'
+  format: custom
+  cross_link: errors/gamma-error-codes.yml
+tracing:
+  request_id_header: x-request-id
+  notes: Returned on responses; quote it when contacting support on 500s.
+versioning:
+  scheme: uri-path
+  current: v1.0
+  cross_link: lifecycle/gamma-lifecycle.yml

@@ -1,0 +1,24 @@
+generated: '2026-07-19'
+method: searched
+source: https://developers.gamma.app/guides/async-patterns-and-polling
+notes: >-
+  Gamma signals rate limits via response headers across three windows (burst,
+  hourly, daily) but does not publish fixed numeric ceilings — limits vary by
+  plan and credit balance. On 429, honor the Retry-After header with exponential
+  backoff. Recommended generation poll interval is 5 seconds; faster polling does
+  not speed generation and risks tripping limits.
+windows:
+- window: burst
+  limit_header: x-ratelimit-limit-burst
+  remaining_header: x-ratelimit-remaining-burst
+- window: hourly
+  limit_header: x-ratelimit-limit
+  remaining_header: x-ratelimit-remaining
+- window: daily
+  limit_header: x-ratelimit-limit-daily
+  remaining_header: x-ratelimit-remaining-daily
+on_exceeded:
+  status: 429
+  retry_after_header: Retry-After
+  guidance: Pause ~30s then retry with exponential backoff.
+billing_model: credit-based

@@ -1,0 +1,38 @@
+generated: '2026-07-19'
+method: searched
+source: live probes of /.well-known/ across Gamma hosts
+hosts:
+- host: https://mcp.gamma.app
+  documents:
+  - path: /.well-known/oauth-protected-resource   # RFC 9728
+    status: 200
+    file: gamma-oauth-protected-resource.json
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+- host: https://auth.gamma.app
+  documents:
+  - path: /.well-known/oauth-authorization-server  # RFC 8414
+    status: 200
+    file: gamma-oauth-authorization-server.json
+  - path: /.well-known/openid-configuration
+    status: 404
+- host: https://public-api.gamma.app
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+- host: https://gamma.app
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404

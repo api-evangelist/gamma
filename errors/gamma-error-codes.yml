@@ -1,0 +1,56 @@
+generated: '2026-07-19'
+method: searched
+source: https://developers.gamma.app/reference/error-codes
+format: custom
+envelope:
+  shape: '{ "message": string, "statusCode": number }'
+  fields: [message, statusCode]
+notes: >-
+  Gamma returns a simple JSON error envelope (message + statusCode), not
+  RFC 9457 problem+json. The x-request-id response header should be quoted when
+  contacting support on 500s. Rate-limit responses (429) carry a Retry-After
+  header.
+errors:
+- status: 400
+  title: Input validation error
+  meaning: Invalid parameters detected.
+  remediation: >-
+    Verify required fields (inputText/pages for generations; prompt and gammaId
+    for templates); confirm enum values match exactly; inputText must be
+    1-400,000 characters; keep numCards within plan limits.
+- status: 401
+  title: Invalid API key
+  meaning: The provided API key is invalid or not associated with an eligible account.
+  remediation: Verify the key starts with sk-gamma-, is not revoked, and use the case-sensitive X-API-KEY header.
+- status: 402
+  title: Insufficient credits remaining
+  meaning: The workspace does not have enough credits.
+  remediation: Purchase credits at gamma.app/settings/billing or enable auto-recharge; monitor credits.remaining in poll responses.
+- status: 403
+  title: Forbidden
+  meaning: Access denied — no permission for the resource, or the feature is not available on the plan.
+  remediation: Verify permissions and plan eligibility.
+- status: 403
+  title: Archive access denied
+  meaning: You must have edit permission to archive this gamma.
+  remediation: Use the gammaId (starts with g_), not the URL slug; confirm same workspace and edit permission.
+- status: 403
+  title: Admin role required
+  meaning: Workspace admin role required.
+  remediation: DELETE /gammas/{gammaId} requires a workspace admin role.
+- status: 404
+  title: Generation ID not found
+  meaning: The specified generation ID could not be located.
+  remediation: Check and correct the generation ID.
+- status: 429
+  title: Too many requests
+  meaning: Too many requests have been made.
+  remediation: Wait before retrying; check the Retry-After header; use exponential backoff; consider a plan upgrade.
+- status: 500
+  title: Generation error
+  meaning: An unexpected error occurred while generating the gamma.
+  remediation: Contact support with the x-request-id header.
+- status: 502
+  title: Bad gateway
+  meaning: The request could not be processed due to a temporary gateway issue.
+  remediation: Retry the request.

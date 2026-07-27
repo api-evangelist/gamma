@@ -1,0 +1,45 @@
+generated: '2026-07-19'
+method: searched
+source: https://developers.gamma.app/reference/changelog
+scheme: dated
+current_version: v1.0
+entries:
+- date: '2026-07-16'
+  breaking: false
+  highlights:
+  - Card analytics now include cardName and cardPosition.
+  - GET /gammas/{gammaId}/analytics/cards returns every card in the Gamma.
+  - Unviewed cards display zeroed stats.
+- date: '2026-03-06'
+  breaking: false
+  highlights:
+  - Gamma launched as a ChatGPT application.
+  - Native integrations live on Zapier, Make, and n8n with full v1.0 API parity.
+- date: '2026-02-27'
+  breaking: false
+  highlights:
+  - Create from Template reached general availability.
+  - New stylePreset parameter and PNG export support.
+  - New image models including Recraft v4 variants and Gemini/Flux options.
+- date: '2026-01-23'
+  breaking: false
+  highlights:
+  - Claude connector enables direct gamma creation from Claude conversations.
+- date: '2026-01-16'
+  breaking: true
+  highlights:
+  - v0.2 endpoints disabled; all integrations must use v1.0.
+- date: '2025-11-05'
+  breaking: false
+  highlights:
+  - Generate API reached v1.0 GA.
+  - Added webpage generation, headers/footers, and folder assignment.
+- date: '2025-09-15'
+  breaking: false
+  highlights:
+  - Credits-based pricing introduced; Ultra tier supports up to 75 cards.
+  - Zapier integration.
+- date: '2025-07-28'
+  breaking: false
+  highlights:
+  - Beta release of the Gamma Generate endpoints.
