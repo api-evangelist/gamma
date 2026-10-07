@@ -1,0 +1,48 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-07'
+method: searched
+source: https://gamma.app/pricing
+sources:
+- https://gamma.app/pricing
+provenance:
+  tool: all/0-working/economics/harvest_pricing.py
+  run: 20261007T104522
+  grounding: every price_text was found verbatim in the fetched page text
+audience: business-product
+pricing_basis: tiered-subscription
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-07'
+  managed_tier: Plus
+published: false
+note: No numeric price is published on the pricing page; Tier names and feature lists are shown but no
+  numeric prices appear in the visible text; monthly/annual toggle present. API access listed as a Pro-tier
+  feature.
+plan_count: 4
+plans:
+- name: Free
+  price_text: Start for free
+  period: none
+  included_quota: Create up to 10 slides per prompt; Simple presentations, docs, websites, social, and
+    images; Import from PDF & PPTX; Export to PDF, PPTX, PNG & Google Slides
+- name: Plus
+  price_text: Get started
+  period: none
+  included_quota: 'Everything in Free, and: Create up to 100 slides per prompt; Remove Gamma branding;
+    Advanced AI image models'
+- name: Pro
+  price_text: Get started
+  period: none
+  included_quota: 'Everything in Plus, and: Premium AI image models; Custom branding; Detailed analytics
+    & advanced sharing; Publish up to 10 custom domains; API access'
+- name: Ultra
+  price_text: Get started
+  period: none
+  included_quota: 'Everything in Pro, and: most advanced AI models (text, image, video); Publish up to
+    100 custom domains; Early access to new features'
+rate_limit_statements:
+- Create up to 10 slides per prompt
+- Create up to 100 slides per prompt
+- Publish up to 10 custom domains
+- Publish up to 100 custom domains
