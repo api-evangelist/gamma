@@ -64,6 +64,121 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Gamma is a company surfaced as a portfolio company of accel, ivp, sapphire-ventures, uncork-capital and added to the API Evangelist network as a stub for enrichment. Sector: productivity. This profile is a lead awaiting the enrichment pipeline.
+Gamma (Gamma Tech, Inc.) is an AI-native productivity platform for creating presentations, documents, websites, and social posts from a prompt or from existing content. Its public Generate API lets developers programmatically produce and manage gammas: generate from scratch or from a template, poll the asynchronous generation job, list workspace themes and folders, export to PDF, PPTX, or PNG, read and manage gammas, and pull document- and card-level engagement analytics. Authentication is via an X-API-KEY header (keys begin sk-gamma-) on Pro, Ultra, Teams, and Business plans, with credit-based billing. Gamma also ships an official remote MCP server (OAuth 2.0 with Dynamic Client Registration) and native integrations for Zapier, Make, n8n, Claude, and ChatGPT.
 
-Backed by: accel, ivp, sapphire-ventures, uncork-capital — https://gamma.app/
+**Areas:** Company · Productivity · Presentations · Documents · Websites · Artificial Intelligence · Generative AI · Content Generation · Design
+
+## Gamma on APIs.io
+
+Everything profiled for Gamma is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/gamma/](https://apis.io/providers/gamma/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Gamma Generate API](https://apis.io/apis/gamma/gamma-generate-api/) — Programmatic creation and management of gammas (presentations, documents, websites, and social posts). Asynchronous generate-and-poll workflow plus…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [gamma](https://apis.io/servers/gamma/gamma/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Gamma Authentication](https://apis.io/security/gamma/gamma-authentication/)
+- [Gamma Domain Security](https://apis.io/security/gamma/gamma-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Gamma Scopes](https://apis.io/scopes/gamma/gamma-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Gamma Plans Pricing](https://apis.io/plans/gamma/gamma-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Gamma Rate Limits](https://apis.io/rate-limits/gamma/gamma-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://gamma.app/)
+- [Documentation](https://developers.gamma.app/docs/getting-started)
+- [Getting started](https://developers.gamma.app/docs/getting-started)
+- [API reference](https://developers.gamma.app/get-started/understanding-the-api-options)
+- [Pricing](https://gamma.app/pricing)
+- [Sign up](https://gamma.app/signup)
+- [Support](https://help.gamma.app/)
+- [Changelog](https://developers.gamma.app/reference/changelog)
+- [Terms of service](https://gamma.app/terms)
+- [Privacy policy](https://gamma.app/privacy)
+- [GitHub](https://github.com/gamma-app)
+- [Status](https://status.gamma.app/)
+
+## API Evangelist rating
+
+**Kin Score 42.8** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 26.3 |
+| Developer ergonomics | 61.9 |
+| Access clarity | 76.3 |
+
+**Agent readiness 32.7** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 31.8** — AI & Biometrics
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/gamma/](https://apis.io/providers/gamma/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Gamma: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/gamma/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
